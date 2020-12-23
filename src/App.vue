@@ -3,15 +3,19 @@
 		:style="backgroundGradient"
 		@mousemove="redefinePositions"
 		@mouseleave ="resetPositions">
-		<div id="nav" />
+		<Header />
 		<RouterView />
 	</div>
 </template>
 
 <script>
+	import Header from '@/components/Header/Header';
 	import {bgColorFrom, bgColorTo } from './styles/variables.scss';
 	export default {
 		name: 'App',
+		components:{
+			Header,
+		},
 		data() {
 			return {
 				gradientX: '50%',
