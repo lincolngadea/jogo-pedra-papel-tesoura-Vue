@@ -4,4 +4,4 @@ export default {
 	[SET_SCORE](state, score){
 		state.score = score;
 	},
-}
+};

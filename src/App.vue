@@ -4,7 +4,9 @@
 		@mousemove="redefinePositions"
 		@mouseleave ="resetPositions">
 		<Header />
-		<RouterView />
+		<div class="view">
+			<RouterView />
+		</div>
 	</div>
 </template>
 
@@ -28,7 +30,7 @@
 					background: `radial-gradient(circle at
 																				${this.gradientX} ${this.gradientY},
 																				${bgColorFrom},
-																				${bgColorTo})`,
+																				${bgColorTo}`,
 				};
 			},
 		},
@@ -53,5 +55,13 @@
 		flex-direction: column;
 		height: 100%;
 		font-family: 'Barlow Semi Condensed', Helvetica, Arial, sans-serif;
+
+		.view {
+			width: 100%;
+			height: 100%;
+			max-width: 800px;
+			margin: 0 auto;
+			padding: rfs(30px);
+		}
 	}
 </style>
