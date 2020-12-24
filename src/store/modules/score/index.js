@@ -2,9 +2,9 @@ import mutations from './mutations';
 
 export default {
 	namespaced: true,
-	state(){
+	state() {
 		return {
-			score:0,
+			score: 0,
 		};
 	},
 	mutations,

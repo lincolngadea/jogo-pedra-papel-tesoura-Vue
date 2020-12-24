@@ -12,48 +12,35 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+	import { mapState } from 'vuex';
 
-import { SET_SCORE } from '@/store/modules/score/mutations';
-
-export default {
-	name: 'Score',
-	computed: {
-		...mapState('Score',{
-			score:({ score }) => score,
-		}),
-	},
-	created() {
-		setTimeout(()=>{
-			this.setScore(2);
-		},1000);
-	},
-	methods:{
-		...mapMutations('Score',{
-			setScore: SET_SCORE,
-		}),
-	},
-};
+	export default {
+		name: 'Score',
+		computed: {
+			...mapState('Score', {
+				score: ({ score }) => score,
+			}),
+		},
+	};
 </script>
 
-<style lang="scss">
-	.score{
+<style lang="scss" scoped>
+	.score {
 		background-color: $white;
 		border-radius: 10px;
 		padding: rfs(20px 50px);
-		margin-right: 20px;
 
-		@media (max-width: 400px){
+		@media (max-width: 400px) {
 			padding: 20px;
 		}
 
-		&-label{
+		&-label {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			line-height: 1;
 
-			&--text{
+			&--text {
 				font-size: rfs(1rem);
 				letter-spacing: 2.5px;
 				color: $score-text;
@@ -61,7 +48,7 @@ export default {
 
 			&--number {
 				font-size: rfs(5rem);
-				color:$dark-text;
+				color: $dark-text;
 			}
 		}
 	}

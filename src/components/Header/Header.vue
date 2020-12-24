@@ -14,7 +14,8 @@
 </template>
 
 <script>
-	import Score from './Score'
+	import Score from './Score.vue';
+
 	export default {
 		name: 'Header',
 		components: {
@@ -32,8 +33,7 @@
 		max-width: 800px;
 		padding: rfs(30px);
 
-
-		@media (min-width: 800px){
+		@media (min-width: 800px) {
 			margin: 0 auto;
 		}
 
@@ -41,10 +41,10 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			width:100%;
+			width: 100%;
 			border: 3px solid $header-outline;
 			border-radius: 20px;
-			padding: rfs(20px 3px);
+			padding: rfs(20px 30px);
 
 			.title {
 				display: flex;

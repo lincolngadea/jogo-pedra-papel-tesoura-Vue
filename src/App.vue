@@ -1,8 +1,10 @@
 <template>
-	<div id="app"
+	<div
+		id="app"
 		:style="backgroundGradient"
 		@mousemove="redefinePositions"
-		@mouseleave ="resetPositions">
+		@mouseleave="resetPositions"
+	>
 		<Header />
 		<div class="view">
 			<RouterView />
@@ -11,11 +13,13 @@
 </template>
 
 <script>
-	import Header from '@/components/Header/Header';
-	import {bgColorFrom, bgColorTo } from './styles/variables.scss';
+	import Header from '@/components/Header/Header.vue';
+
+	import { bgColorFrom, bgColorTo } from './styles/variables.scss';
+
 	export default {
 		name: 'App',
-		components:{
+		components: {
 			Header,
 		},
 		data() {
@@ -24,13 +28,10 @@
 				gradientY: '0%',
 			};
 		},
-		computed:{
-			backgroundGradient(){
+		computed: {
+			backgroundGradient() {
 				return {
-					background: `radial-gradient(circle at
-																				${this.gradientX} ${this.gradientY},
-																				${bgColorFrom},
-																				${bgColorTo}`,
+					background: `radial-gradient(circle at ${this.gradientX} ${this.gradientY}, ${bgColorFrom}, ${bgColorTo})`,
 				};
 			},
 		},
@@ -39,12 +40,12 @@
 				this.gradientX = `${clientX}px`;
 				this.gradientY = `${clientY}px`;
 			},
-			resetPositions(){
+			resetPositions() {
 				this.gradientX = '50%';
 				this.gradientY = '0%';
-			}
+			},
 		},
-};
+	};
 </script>
 
 <style lang="scss">
@@ -54,11 +55,11 @@
 		display: flex;
 		flex-direction: column;
 		height: 100%;
+		min-height: 100vh;
 		font-family: 'Barlow Semi Condensed', Helvetica, Arial, sans-serif;
 
 		.view {
 			width: 100%;
-			height: 100%;
 			max-width: 800px;
 			margin: 0 auto;
 			padding: rfs(30px);
